@@ -1,15 +1,23 @@
 ## DESCRIPTION
 
-## Steps to test
+## How to pull down
 ```
 Commands
-git clone https://github.com/USERNAME/REPOSITORY.git
-git fetch remotename
-git merge remotename/branchname
-git pull remotename branchname
+git fetch --all
+git pull branchname
+python manage.py runserver
 ```
-## How to pull down
+
+## Steps to test
 
 ## What you changed
 
 ## What was added to read me
+
+## Final Checklist
+Before merging.
+1. Has each file changed been reviewed?
+1. Has the readme been updated to reflect changes made?
+1. Has a teammate approved the PR?
+
+Then Ship It!

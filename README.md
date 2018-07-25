@@ -7,3 +7,7 @@ Create a pip virtual environment as a sibling of this repo in your own file syst
 1. djangorestframework
 1. django-safedelete
 1. arrow
+
+## API
+1. Created the Api app and directories for file structure. Will need to create your own virtual environment for installs
+

@@ -1,10 +1,12 @@
 ## DESCRIPTION
 
 ## How to pull down
-```
 Commands
+
+```
 git fetch --all
 git pull branchname
+git checkout branchname
 python manage.py runserver
 ```
 

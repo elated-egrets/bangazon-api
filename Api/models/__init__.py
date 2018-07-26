@@ -1,4 +1,5 @@
 from .category_model import Category
 from .user_model import User
 from .payment_model import Payment
-from. order_model import Order
+from .order_model import Order
+from .product_model import Product

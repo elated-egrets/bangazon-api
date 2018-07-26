@@ -34,5 +34,26 @@ user_model.py in Api/Models
 user_serializer.py in Api/Serializers
 user_view.py in Api/Views
 
+Technologies used
 
+**Django:** an application framework written in Python. After installing the basic Django starter project and creating a Django app called Api, we modified the Api app files as follows:
 
+- Models
+  - Created a class that contains a representation of the database structure.
+  - [List of possible fields](https://docs.djangoproject.com/en/2.0/ref/models/fields/)
+  
+- Serializers
+  - Created a class that converts SQLite data, as gathered by the Model, into Python datatypes. 
+  - [More info on serializers](http://www.django-rest-framework.org/api-guide/serializers/)
+ 
+- View
+  - View receives Python data from the Serializer, and is where we can filter and manipulate that data
+  - [More info on views](https://docs.djangoproject.com/en/2.0/topics/http/views/)
+  
+- URLs
+  - Connects a url to a view. When a URL matches a defined string in urls.py, the corresponding View runs. 
+  - [More info on urls](https://docs.djangoproject.com/en/2.0/topics/http/urls/)
+  
+While Django can normally serve HTML, we're using the **Django REST** framework to serve JSON for use alongside an app. 
+
+**Serializers, Views, and URLs** are importing from the Django REST framework. Namely, the Serializers and Views classes inherit from Django REST, and URLs router uses a Django REST router. 

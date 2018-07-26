@@ -3,11 +3,25 @@ from .user_model import User
 
 
 class Payment(models.Model):
+    """model for payment information
+
+    data:
+        name -- str, user defined string representing the payment type
+        payment_type -- str, either card or bank account
+        account_number -- int, bank account or card number
+        expiration -- date, expiration of the payment type
+        security_code -- int, security code for card
+        bank -- str, issuing bank or bank account holder
+        user_id -- FK, reference to user who registered payment type
+    """
     name = models.CharField(max_length=50)
-    payment_type = models.Field.choices = (
-        ('CD', 'Card'),
-        ('BK', 'Bank Account')
+    CARD = 'CD'
+    ACCOUNT = 'AC'
+    payment_choices = (
+        (CARD, 'Card'),
+        (ACCOUNT, 'Bank Account'),
     )
+    payment_type = models.CharField(max_length=2, choices=payment_choices, default=CARD)
     account_number = models.IntegerField()
     expiration = models.DateField()
     security_code = models.IntegerField()
@@ -15,4 +29,9 @@ class Payment(models.Model):
     user_id = models.ForeignKey(User, related_name='payment', on_delete=models.CASCADE)
 
     def __str__(self):
+        """a string representation of the object
+
+        Returns:
+            string -- name of payment type as well as issuing bank
+        """
         return f'{self.name}: {self.bank}'

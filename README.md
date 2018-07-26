@@ -9,7 +9,6 @@ Create a pip virtual environment as a sibling of this repo in your own file syst
 1. django
 1. djangorestframework
 1. django-safedelete
-1. arrow
 
 ### steps to create virtual environment
 1. cd into the directory you wish the environment to live (this should be outside your git repo)

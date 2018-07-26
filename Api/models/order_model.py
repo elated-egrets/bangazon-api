@@ -20,4 +20,8 @@ class Order(models.Model):
     date_created = timezone.now()
 
     def __str__(self):
+<<<<<<< HEAD
         return f'{self.buyer_id} {self.payment} '
+=======
+        return f'{self.buyer_id} {self.payment} '
+>>>>>>> master

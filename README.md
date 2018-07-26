@@ -56,4 +56,4 @@ Technologies used
   
 While Django can normally serve HTML, we're using the **Django REST** framework to serve JSON for use alongside an app. 
 
-
+**Serializers, Views, and URLs** are importing from the Django REST framework. Namely, the Serializers and Views classes inherit from Django REST, and URLs router uses a Django REST router. 

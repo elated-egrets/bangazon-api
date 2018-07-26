@@ -11,6 +11,22 @@ Create a pip virtual environment as a sibling of this repo in your own file syst
 1. django-safedelete
 1. arrow
 
+### steps to create virtual environment
+1. cd into the directory you wish the environment to live (this should be outside your git repo)
+1. run the following commands
+```
+virtualenv [name_of_environment]
+```
+
+### steps to activate environment
+to resume development and reactivate your virtual env
+1. cd into directory in which you created the environment
+1. run the following command
+```
+source [name_of_environment]/bin/activate
+```
+1. you should now be in your virtual environment
+
 ## style conventions
 1. All directories should have the first letter capitalized. Models, Views, Api etc...
 1. All files should be in lower case snake case. user_view.py, product_serializer.py etc...
@@ -41,19 +57,19 @@ Technologies used
 - Models
   - Created a class that contains a representation of the database structure.
   - [List of possible fields](https://docs.djangoproject.com/en/2.0/ref/models/fields/)
-  
+
 - Serializers
-  - Created a class that converts SQLite data, as gathered by the Model, into Python datatypes. 
+  - Created a class that converts SQLite data, as gathered by the Model, into Python datatypes.
   - [More info on serializers](http://www.django-rest-framework.org/api-guide/serializers/)
- 
+
 - View
   - View receives Python data from the Serializer, and is where we can filter and manipulate that data
   - [More info on views](https://docs.djangoproject.com/en/2.0/topics/http/views/)
-  
-- URLs
-  - Connects a url to a view. When a URL matches a defined string in urls.py, the corresponding View runs. 
-  - [More info on urls](https://docs.djangoproject.com/en/2.0/topics/http/urls/)
-  
-While Django can normally serve HTML, we're using the **Django REST** framework to serve JSON for use alongside an app. 
 
-**Serializers, Views, and URLs** are importing from the Django REST framework. Namely, the Serializers and Views classes inherit from Django REST, and URLs router uses a Django REST router. 
+- URLs
+  - Connects a url to a view. When a URL matches a defined string in urls.py, the corresponding View runs.
+  - [More info on urls](https://docs.djangoproject.com/en/2.0/topics/http/urls/)
+
+While Django can normally serve HTML, we're using the **Django REST** framework to serve JSON for use alongside an app.
+
+**Serializers, Views, and URLs** are importing from the Django REST framework. Namely, the Serializers and Views classes inherit from Django REST, and URLs router uses a Django REST router.

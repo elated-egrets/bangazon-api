@@ -21,5 +21,3 @@ class Order(models.Model):
 
     def __str__(self):
         return f'{self.buyer_id} {self.payment} '
-class Payment(models.Model):
-    pass

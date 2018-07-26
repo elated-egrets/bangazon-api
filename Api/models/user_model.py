@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils import timezone
+from safedelete.models import SafeDeleteModel
+from safedelete.models import NO_DELETE
 
-class User(models.Model):
+class User(SafeDeleteModel):
+    _safedelete_policy = NO_DELETE
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     date_created = timezone.now()

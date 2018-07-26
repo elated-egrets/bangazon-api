@@ -9,7 +9,6 @@ class Payment(models.Model):
     expiration = models.DateField()
     security_code = models.IntegerField()
     bank = models.CharField(max_length=20)
-    user_id = models.ForeignKey()
 
     def __str__(self):
         return f'{self.name}: {self.description}'

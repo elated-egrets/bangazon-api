@@ -1,8 +1,16 @@
 from django.db import models
 from .user_model import User
+from safedelete.models import SafeDeleteModel
+from safedelete.models import SOFT_DELETE
+from safedelete.managers import SafeDeleteManager
+from safedelete import DELETED_VISIBLE_BY_PK
 
+class MyModelManager(SafeDeleteManager):
+    _safedelete_visibility = DELETED_VISIBLE_BY_PK
 
-class Payment(models.Model):
+class Payment(SafeDeleteModel):
+    _safedelete_policy = SOFT_DELETE
+    objects = MyModelManager()
     """model for payment information
 
     data:

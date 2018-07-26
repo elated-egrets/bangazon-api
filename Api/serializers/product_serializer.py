@@ -13,4 +13,4 @@ class Product_Serializer(serializers.ModelSerializer):
             'price',
             'date_created',
         )
-        model = models.Payment
+        model = models.Product

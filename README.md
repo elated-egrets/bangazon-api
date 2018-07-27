@@ -6,7 +6,7 @@ Welcome to the bangazon repository.
 
 The following are the endpoints and http methods included in this API:
 
-###Users
+### Users
 
 ```
 (
@@ -22,18 +22,18 @@ The following are the endpoints and http methods included in this API:
 
 1.  GET (single user)
     - /users/<user_id>
-2.  GET (list of all users)
+1.  GET (list of all users)
     - [#11](https://github.com/elated-egrets/bangazon-api/projects/2#card-11583296) On querying for users who have never made a purchase
     - /users/
     - sends back: returns an array of JSON objects
-3.  POST
+1.  POST
     - /users/
     - creates a new user
-4.  PUT
+1.  PUT
     - /users/<user_id>
     - all fields are required: first_name, last_name, password, email
 
-### Order
+### Orders
 
 ```
 (
@@ -48,22 +48,22 @@ The following are the endpoints and http methods included in this API:
     - /order/<user_id>
     - GET a single JSON object back with the proper information.
       - NOTE: This should return a nested list of all products in the order, and details for each product.
-2.  GET (List)
+1.  GET (List)
     - /order/
     - returns a list of current orders.
-3.  POST
+1.  POST
     - Create a new order.
     - /order/
-4.  PUT
+1.  PUT
     - Edit existing order.
     - /order/<order_id>
     - All keys and fields required to edit.
-5.  DELETE
+1.  DELETE
     - /order/<order_id>
     - Delete from the Order table and cascade where necessary.
     - Sets Foreign Key on Order products to Null.
 
-### Payment
+### Payments
 
 ```
 (
@@ -78,7 +78,7 @@ The following are the endpoints and http methods included in this API:
 )
 ```
 
-5.  GET (single)
+1.  GET (single)
     - /payment/<payment_id>
     - Get a single payment type
     - Payment type has the following resources
@@ -88,23 +88,23 @@ The following are the endpoints and http methods included in this API:
       - expiration (date) expiration for cards
       - security_code (int) security code for cards
       - user_id (int, FK) references to user who registered the payment type
-6.  GET (list)
+1.  GET (list)
     - /payment/
     - Returns a list of all payment types
-7.  POST
+1.  POST
     - creates a new payment type
-8.  PUT
+1.  PUT
     - updates information about a payment type
-9.  DELETE
+1.  DELETE
     - Safe Delete, payment should be masked from general queries, but still be accessible by primary key lookup
     - Deleting a payment type will make it no longer be listed in a general query for payment types on /api/payment
-    - Individual deleted payment types are still accessible by primary key lookup on path /api/payment/[id] where id is the integer id for the payment type object
-10. Routes
+    - Individual deleted payment types are still accessible by primary key lookup on path /api/payment/[id] where id is the integer id for the payment type object1.  
+1.  Routes
 
 - Payment type lives on the route /api/payment from the root directory of the project.
 - Detailed view (as well as PUT, DELETE methods) can be requested from route /api/payment/[id] where id is the integer id for the payment type object
 
-### Product
+### Products
 ```
 (
   'id',
@@ -117,22 +117,22 @@ The following are the endpoints and http methods included in this API:
 )
 ```
 
-5.  GET (Single Item)
+1.  GET (Single Item)
     - /product/<id>
     - returns a JSON object with a single product
-6.  GET (List)
+1.  GET (List)
     - User should be able to GET a list, and GET a single item.
     - returns an array of objects
-7.  POST
+1.  POST
     - Create a new product
     - /product/
-8.  PUT
-    - Edit an existing product
+1.  PUT
+1.  - Edit an existing product
     - /product/<id>
     - All keys are required when editing
-9.  DELETE
+1.  DELETE
     - Safe cascade delete from intersection table
-    - /product/<id>
+1.  - /product/<id>
 
 ### Product Category
 
@@ -144,31 +144,30 @@ The following are the endpoints and http methods included in this API:
 )
 ```
 
-5.  GET (Single Item)
+1.  GET (Single Item)
     - /category/<category_id>
     - returns a JSON object with a single category
-6.  GET (List)
+1.  GET (List)
     - /category/
     - returns a list of categories as an array of objects
-7.  POST
+1.  POST
     - Create a new product
     - /category/
-8.  PUT
-    - Edit an existing product
+1.  PUT
+1.  - Edit an existing product
     - /category/<id>
     - All keys are required when editing
-9.  DELETE
+1.  DELETE
     - /category/<id>
-    - Deletes from Category table
-    - Sets Foreign Key of deleted category on products to NULL
-
+1.  - Deletes from Category table
+    - Sets Foreign Key of deleted category on products to N1.  
 ## project structure
 
 The django project is the root directory of this repo. The 'Bangazon' directory is the parent project configuration, and django apps should be siblings of that directory.
 
 ## virtual environment
 
-Create a pip virtual environment as a sibling of this repo in your own file system. The following packages are required for working on this project.
+1.  po in your own file system. The following packages are required for working on this project.
 
 1.  django
 1.  djangorestframework
@@ -199,7 +198,7 @@ source [name_of_environment]/bin/activate
 ## style conventions
 
 1.  All directories should not have the first letter capitalized. 'models', 'views', etc...
-2.  All files should be in lower case snake case. user_view.py, product_serializer.py etc...
+1.  All files should be in lower case snake case. user_view.py, product_serializer.py etc...
 
 ## Apps
 
@@ -208,10 +207,11 @@ source [name_of_environment]/bin/activate
 This project is the API for bangazon developers. It contains the following resources
 
 1.  Users
-2.  Products
-3.  Categories
-4.  Orders
-5.  Payment options
+1.  Products
+1.  Categories
+1.  
+1.  Orders
+1.  Payment options
 
 #### API file structure
 
@@ -220,13 +220,12 @@ For Example...
 
 For the user collection
 user_model.py in Api/Models
-user_serializer.py in Api/Serializers
+1.  _serializer.py in Api/Serializers
 user_view.py in Api/Views
 
-Technologies used
+1.  nologies used
 
-**Django:** an application framework written in Python. After installing the basic Django starter project and creating a Django app called Api, we modified the Api app files as follows:
-
+1.  ango:** an application framework written in Python. After installing the basic Django starter project and creating a Django app called Api, we modified the Api app files as follo1.  
 - Models
 
   - Created a class that contains a representation of the database structure.
@@ -234,7 +233,7 @@ Technologies used
 
 - Serializers
 
-  - Created a class that converts SQLite data, as gathered by the Model, into Python datatypes.
+1.  into Python datatypes.
   - [More info on serializers](http://www.django-rest-framework.org/api-guide/serializers/)
 
 - View

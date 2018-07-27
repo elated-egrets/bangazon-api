@@ -116,9 +116,9 @@ The django project is the root directory of this repo. The 'Bangazon' directory 
 ## virtual environment
 Create a pip virtual environment as a sibling of this repo in your own file system. The following packages are required for working on this project.
 1. django
-2. djangorestframework
-3. django-safedelete
-4. arrow
+1. djangorestframework
+1. django-safedelete
+
 
 ### steps to create virtual environment
 1. cd into the directory you wish the environment to live (this should be outside your git repo)

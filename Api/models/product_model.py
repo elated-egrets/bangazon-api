@@ -5,6 +5,20 @@ from .category_model import Category
 
 
 class Product(models.Model):
+
+"""
+Product Model
+
+Returns:
+
+name - name of product
+description - description of product
+price - price of product
+date created - when the product was added
+seller id - foreign key of the user that is offering the product for sale on bangazon
+category id - foreign key of the category id that the product belongs to 
+"""
+
   name = models.CharField(max_length=50)
   description = models.CharField(max_length=400)
   price = models.CharField(max_length=10)

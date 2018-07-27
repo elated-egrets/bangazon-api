@@ -8,12 +8,13 @@ from Api import models
 
 """
 
+
 class Order_Serializer(serializers.ModelSerializer):
     class Meta:
         fields = (
+            'id,'
             'buyer_id',
             'payment',
             'date_created'
         )
         model = models.Order
-

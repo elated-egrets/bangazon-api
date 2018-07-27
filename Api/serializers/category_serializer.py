@@ -5,6 +5,7 @@ from Api import models
 class Category_Serializer(serializers.ModelSerializer):
     class Meta:
         fields = (
+          'id',
           'name',
           'description'
         )

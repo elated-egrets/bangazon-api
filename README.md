@@ -35,26 +35,48 @@ The following are the endpoints and http methods included in this API:
 
 ### Order
 
-5.  GET (single order)
+```
+(
+  'id,'
+  'buyer_id',
+  'payment',
+  'date_created'
+)
+```
+
+1.  GET (single order)
     - /order/<user_id>
     - GET a single JSON object back with the proper information.
       - NOTE: This should return a nested list of all products in the order, and details for each product.
-6.  GET (List)
+2.  GET (List)
     - /order/
     - returns a list of current orders.
-7.  POST
+3.  POST
     - Create a new order.
     - /order/
-8.  PUT
+4.  PUT
     - Edit existing order.
     - /order/<order_id>
     - All keys and fields required to edit.
-9.  DELETE
+5.  DELETE
     - /order/<order_id>
     - Delete from the Order table and cascade where necessary.
     - Sets Foreign Key on Order products to Null.
 
 ### Payment
+
+```
+(
+  'id',
+  'name',
+  'payment_type',
+  'account_number',
+  'expiration',
+  'security_code',
+  'bank',
+  'user_id',
+)
+```
 
 5.  GET (single)
     - /payment/<payment_id>
@@ -83,6 +105,17 @@ The following are the endpoints and http methods included in this API:
 - Detailed view (as well as PUT, DELETE methods) can be requested from route /api/payment/[id] where id is the integer id for the payment type object
 
 ### Product
+```
+(
+  'id',
+  'seller_id',
+  'category_id',
+  'name',
+  'description',
+  'price',
+  'date_created',
+)
+```
 
 5.  GET (Single Item)
     - /product/<id>
@@ -102,6 +135,14 @@ The following are the endpoints and http methods included in this API:
     - /product/<id>
 
 ### Product Category
+
+```
+(
+  'id',
+  'name',
+  'description'
+)
+```
 
 5.  GET (Single Item)
     - /category/<category_id>

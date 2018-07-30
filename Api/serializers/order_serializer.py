@@ -1,15 +1,16 @@
 from rest_framework import serializers
 from Api import models
-"""
+
+
+
+class Order_Serializer(serializers.ModelSerializer):
+    """
     Author: Ronnie Young
 
     Creates a searlizer for order.
     and converts the buyer_id, payment, and date_created to JSON data.
 
-"""
-
-
-class Order_Serializer(serializers.ModelSerializer):
+    """
     class Meta:
         fields = (
             'id',

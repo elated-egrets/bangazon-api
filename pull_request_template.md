@@ -5,7 +5,7 @@ Commands
 
 ```
 git fetch --all
-git pull branchname
+git pull origin branchname
 git checkout branchname
 python manage.py runserver
 ```

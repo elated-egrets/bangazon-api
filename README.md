@@ -23,9 +23,11 @@ The following are the endpoints and http methods included in this API:
 1.  GET (single user)
     - /users/<user_id>
 1.  GET (list of all users)
-    - [#11](https://github.com/elated-egrets/bangazon-api/projects/2#card-11583296) On querying for users who have never made a purchase
     - /users/
     - sends back: returns an array of JSON objects
+1.  GET (filtered users based on activity)
+    - /users/?active=[boolean]
+    - sends back: returns an array of JSON objects of users filtered by active users based on the boolean provided in the url
 1.  POST
     - /users/
     - creates a new user
@@ -98,7 +100,7 @@ The following are the endpoints and http methods included in this API:
 1.  DELETE
     - Safe Delete, payment should be masked from general queries, but still be accessible by primary key lookup
     - Deleting a payment type will make it no longer be listed in a general query for payment types on /api/payment
-    - Individual deleted payment types are still accessible by primary key lookup on path /api/payment/[id] where id is the integer id for the payment type object1.  
+    - Individual deleted payment types are still accessible by primary key lookup on path /api/payment/[id] where id is the integer id for the payment type object1.
 1.  Routes
 
 - Payment type lives on the route /api/payment from the root directory of the project.
@@ -160,7 +162,7 @@ The following are the endpoints and http methods included in this API:
 1.  DELETE
     - /category/<id>
 1.  - Deletes from Category table
-    - Sets Foreign Key of deleted category on products to N1.  
+    - Sets Foreign Key of deleted category on products to N1.
 ## project structure
 
 The django project is the root directory of this repo. The 'Bangazon' directory is the parent project configuration, and django apps should be siblings of that directory.
@@ -209,7 +211,6 @@ This project is the API for bangazon developers. It contains the following resou
 1.  Users
 1.  Products
 1.  Categories
-1.  
 1.  Orders
 1.  Payment options
 
@@ -223,9 +224,9 @@ user_model.py in Api/Models
 1.  _serializer.py in Api/Serializers
 user_view.py in Api/Views
 
-1.  nologies used
+1.  technologies used
 
-1.  ango:** an application framework written in Python. After installing the basic Django starter project and creating a Django app called Api, we modified the Api app files as follo1.  
+1.  django:** an application framework written in Python. After installing the basic Django starter project and creating a Django app called Api, we modified the Api app files as follo1.
 - Models
 
   - Created a class that contains a representation of the database structure.
@@ -233,7 +234,7 @@ user_view.py in Api/Views
 
 - Serializers
 
-1.  into Python datatypes.
+1.  Converts sql data into Python datatypes.
   - [More info on serializers](http://www.django-rest-framework.org/api-guide/serializers/)
 
 - View

@@ -19,7 +19,7 @@ class User(SafeDeleteModel):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     date_created = timezone.now()
-    active = False
+    active = models.BooleanField()
     password = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
 

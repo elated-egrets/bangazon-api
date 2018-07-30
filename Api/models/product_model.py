@@ -15,7 +15,7 @@ class Product(models.Model):
   price - price of product
   date created - when the product was added
   seller id - foreign key of the user that is offering the product for sale on bangazon
-  category id - foreign key of the category id that the product belongs to 
+  category id - foreign key of the category id that the product belongs to
   """
 
   name = models.CharField(max_length=50)
@@ -26,4 +26,5 @@ class Product(models.Model):
   category_id = models.ForeignKey(Category, related_name='category', on_delete=models.CASCADE)
 
   def __str__(self):
+    """ returns a string representation of the object """
     return f'{self.name}: {self.description}'

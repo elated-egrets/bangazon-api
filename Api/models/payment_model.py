@@ -1,7 +1,6 @@
 from django.db import models
 from .user_model import User
-from safedelete.models import SafeDeleteModel
-from safedelete.models import SOFT_DELETE
+from safedelete.models import SafeDeleteModel, SOFT_DELETE
 from safedelete.managers import SafeDeleteManager
 from safedelete import DELETED_VISIBLE_BY_PK
 

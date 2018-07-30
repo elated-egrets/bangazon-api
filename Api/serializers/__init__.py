@@ -3,3 +3,4 @@ from .user_serializer import User_Serializer
 from .payment_serializer import Payment_Serializer
 from .order_serializer import Order_Serializer
 from .product_serializer import Product_Serializer
+from .order_product_serializer import Order_Product_Serializer

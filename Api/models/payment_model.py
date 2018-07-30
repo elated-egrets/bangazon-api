@@ -11,9 +11,9 @@ class MyModelManager(SafeDeleteManager):
 class Payment(SafeDeleteModel):
     _safedelete_policy = SOFT_DELETE
     objects = MyModelManager()
-    """model for payment information
+    """Model for payment information
 
-    data:
+    Data:
         name -- str, user defined string representing the payment type
         payment_type -- str, either card or bank account
         account_number -- int, bank account or card number
@@ -37,7 +37,7 @@ class Payment(SafeDeleteModel):
     user_id = models.ForeignKey(User, related_name='payment', on_delete=models.CASCADE)
 
     def __str__(self):
-        """a string representation of the object
+        """A string representation of the object
 
         Returns:
             string -- name of payment type as well as issuing bank

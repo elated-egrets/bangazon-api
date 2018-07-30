@@ -13,8 +13,16 @@ class User_Viewset(viewsets.ModelViewSet):
             The view should filter by active users if the url contains the filter
         """
         queryset = models.User.objects.all()
-        active_query = self.request.query_params.get('active', None)
-        if active_query is not None:
+        query_string = self.request.query_params.get('active', None)
+
+        # take the string value from the url and set a boolean value accordingly
+        if query_string is not None:
+            if query_string == 'false':
+                active_query = False
+            elif query_string == 'true':
+                active_query = True
+            # set the queryset if the filter was present
             queryset = queryset.filter(active=active_query)
+
         return queryset
 

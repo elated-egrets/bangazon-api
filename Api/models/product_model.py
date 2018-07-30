@@ -26,5 +26,5 @@ class Product(models.Model):
   category_id = models.ForeignKey(Category, related_name='category', on_delete=models.CASCADE)
 
   def __str__(self):
-    """ returns a string representation of the object """
+    """ Returns a string representation of the object """
     return f'{self.name}: {self.description}'

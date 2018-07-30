@@ -129,12 +129,12 @@ The following are the endpoints and http methods included in this API:
     - Create a new product
     - /product/
 1.  PUT
-1.  - Edit an existing product
+    - Edit an existing product
     - /product/<id>
     - All keys are required when editing
 1.  DELETE
     - Safe cascade delete from intersection table
-1.  - /product/<id>
+    - /product/<id>
 
 ### Product Category
 
@@ -156,13 +156,13 @@ The following are the endpoints and http methods included in this API:
     - Create a new product
     - /category/
 1.  PUT
-1.  - Edit an existing product
+    - Edit an existing product
     - /category/<id>
     - All keys are required when editing
 1.  DELETE
     - /category/<id>
-1.  - Deletes from Category table
-    - Sets Foreign Key of deleted category on products to N1.
+    - Safe delete from Category table but visible by primary key
+    - cateogry ID remains on product table
 ## project structure
 
 The django project is the root directory of this repo. The 'Bangazon' directory is the parent project configuration, and django apps should be siblings of that directory.

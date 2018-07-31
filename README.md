@@ -170,7 +170,7 @@ The django project is the root directory of this repo. The 'Bangazon' directory 
 
 ## virtual environment
 
-1.  po in your own file system. The following packages are required for working on this project.
+Create a pip virtual environment as a sibling of this repo in your own file system. The following packages are required for working on this project.
 
 1.  django
 1.  djangorestframework

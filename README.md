@@ -63,8 +63,7 @@ The following are the endpoints and http methods included in this API:
     - All keys and fields required to edit.
 1.  DELETE
     - /order/<order_id>
-    - Delete from the Order table and cascade where necessary.
-    - Sets Foreign Key on Order products to Null.
+    - Delete from the Order table and cascade onto intersection table Order_Product
 
 ### Payments
 

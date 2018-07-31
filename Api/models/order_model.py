@@ -19,7 +19,7 @@ class Order(models.Model):
     buyer_id = models.ForeignKey(User, related_name="order", on_delete=models.CASCADE)
     payment = models.ForeignKey("Payment", related_name="order", on_delete=models.CASCADE)
     date_created = timezone.now()
-    # product = models.ForeignKey(Order_Product, related_name="order_product_intersection", on_delete=models.CASCADE)
+    products = models.ManyToManyField(Product, through='Order_Product')
 
     def __str__(self):
         """ returns a string representation of the object """

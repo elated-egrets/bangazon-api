@@ -43,13 +43,14 @@ The following are the endpoints and http methods included in this API:
   'buyer_id',
   'payment',
   'date_created'
+  'products'
 )
 ```
 
 1.  GET (single order)
     - /order/<user_id>
     - GET a single JSON object back with the proper information.
-      - NOTE: This should return a nested list of all products in the order, and details for each product.
+      - NOTE: This returns a nested list of all products in the order, and details for each product.
 1.  GET (List)
     - /order/
     - returns a list of current orders.
